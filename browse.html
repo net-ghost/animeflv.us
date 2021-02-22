@@ -1,26 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['logueado']) && $_SESSION['logueado'] == TRUE) {
-	
-  
-}else{
-	header("Location: index");
-}
-?>
-
-<?php
-
-
-$new = file_get_contents('https://api.themoviedb.org/3/movie/top_rated?api_key=09dfbe2a64e3af2d7fe4bef6a6bab92f');
-$new = json_decode($new, true)['results'];
-$popular = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=09dfbe2a64e3af2d7fe4bef6a6bab92f');
-$popular = json_decode($popular, true)['results'];
-$upcoming = file_get_contents('https://api.themoviedb.org/3/movie/upcoming?api_key=09dfbe2a64e3af2d7fe4bef6a6bab92f');
-$upcoming = json_decode($upcoming, true)['results'];
-$upcomings = file_get_contents('https://api.themoviedb.org/3/tv/popular?api_key=09dfbe2a64e3af2d7fe4bef6a6bab92f');
-$upcomings = json_decode($upcomings, true)['results'];
-//print_r($new);
-?>
 
 <html lang="es">
 <head><title>Sertheny</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
